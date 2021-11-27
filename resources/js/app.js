@@ -9,7 +9,14 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 
 import router from "./router";
-import App from "./layouts/App.vue"
+import App from "./layouts/App.vue";
+import VueAxios from 'vue-axios';
+import VueRouter from 'vue-router';
+import axios from 'axios';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,6 +36,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+ Vue.use(VueRouter);
+ Vue.use(VueAxios, axios);
+
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 const app = new Vue({
     router,

@@ -1,25 +1,33 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <router-link :to="{ name: 'home' }" class="navbar-brand">
-                    Home
+                    Laravue
                 </router-link>
                 <button
                     class="navbar-toggler"
                     data-toggle="collapse"
-                    data-target="#navbarText"
+                    data-target="#navbarCollapse"
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <router-link
                                 :to="{ name: 'home' }"
                                 class="nav-link"
                             >
                                 Home
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link
+                                :to="{ name: 'book' }"
+                                class="nav-link"
+                            >
+                                Book
                             </router-link>
                         </li>
                         <li class="nav-item">
@@ -38,15 +46,13 @@
         <div class="container">
             <router-view></router-view>
         </div>
+
+        
     </div>
 </template>
 
 <script>
 export default {
-    watch: {
-        $route() {
-            $("#navbarCollape").collapse("hide");
-        }
-    }
+
 }
 </script>
